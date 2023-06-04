@@ -8,7 +8,9 @@ Haz clic en el botón "+" en la esquina superior derecha y selecciona "New repos
 Asigna un nombre al repositorio y, opcionalmente, proporciona una descripción.
 Configura las opciones adicionales según tus preferencias (por ejemplo, público o privado).
 Haz clic en el botón "Create repository" para crear el repositorio vacío en GitHub.
-Copia la URL del repositorio remoto. En la página del repositorio en GitHub, encontrarás una sección que muestra la URL del repositorio, ya sea en formato HTTPS o SSH. Haz clic en el botón "Code" y copia la URL correspondiente al método que deseas utilizar para la conexión.
+Copia la URL del repositorio remoto. 
+En la página del repositorio en GitHub, encontrarás una sección que muestra la URL del repositorio, ya sea en formato HTTPS o SSH. 
+Haz clic en el botón "Code" y copia la URL correspondiente al método que deseas utilizar para la conexión.
 
 Vuelve a tu terminal o línea de comandos y asegúrate de estar ubicado dentro del directorio de tu repositorio local.
 
