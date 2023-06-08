@@ -59,3 +59,9 @@ La siguiente plantilla de AWS CloudFormation proporciona una configuración bás
 
 
 Además, puedes utilizar [reglas predefinidas proporcionadas por AWS y la comunidad](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type.html) para complementar la configuración del WAF.
+
+| Servicio         | Puntos de conexión                                                                                                                   | Independencia           |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------|-------------------------|
+| AWS WAF          | - Puede enviar registros de auditoría a AWS CloudWatch Logs para su análisis<br>- Puede utilizar AWS WAF como origen de eventos para reglas personalizadas en AWS EventBridge (anteriormente Amazon CloudWatch Events) | Parcialmente independiente |
+| Amazon GuardDuty | - Puede enviar hallazgos de Amazon GuardDuty a AWS Security Hub para su centralización y análisis<br>- Puede utilizar Amazon GuardDuty como origen de eventos para reglas personalizadas en AWS EventBridge (anteriormente Amazon CloudWatch Events) | Parcialmente independiente |
+| AWS Security Hub | - Puede recibir hallazgos de AWS WAF y Amazon GuardDuty para su visualización y correlación<br>- Puede utilizar AWS Security Hub como origen de eventos para reglas personalizadas en AWS EventBridge (anteriormente Amazon CloudWatch Events) | Parcialmente independiente |
