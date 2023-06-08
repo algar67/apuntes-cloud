@@ -67,3 +67,15 @@ Además, puedes utilizar [reglas predefinidas proporcionadas por AWS y la comuni
 | AWS WAF          | - Puede enviar registros de auditoría a AWS CloudWatch Logs para su análisis<br>- Puede utilizar AWS WAF como origen de eventos para reglas personalizadas en AWS EventBridge (anteriormente Amazon CloudWatch Events) | Parcialmente independiente |
 | Amazon GuardDuty | - Puede enviar hallazgos de Amazon GuardDuty a AWS Security Hub para su centralización y análisis<br>- Puede utilizar Amazon GuardDuty como origen de eventos para reglas personalizadas en AWS EventBridge (anteriormente Amazon CloudWatch Events) | Parcialmente independiente |
 | AWS Security Hub | - Puede recibir hallazgos de AWS WAF y Amazon GuardDuty para su visualización y correlación<br>- Puede utilizar AWS Security Hub como origen de eventos para reglas personalizadas en AWS EventBridge (anteriormente Amazon CloudWatch Events) | Parcialmente independiente |
+
+
+## tabla resumen adicional
+
+| Servicio         | Puntos de conexión                                                                   | Relación    |
+|------------------|-------------------------------------------------------------------------------------|-------------|
+| AWS WAF          | - Puede enviar registros de auditoría a AWS CloudWatch Logs                         | Integración |
+|                  | - Puede utilizar AWS WAF como origen de eventos en AWS EventBridge                   |             |
+| Amazon GuardDuty | - Puede enviar hallazgos a AWS Security Hub para su centralización y análisis       | Integración |
+|                  | - Puede utilizar Amazon GuardDuty como origen de eventos en AWS EventBridge         |             |
+| AWS Security Hub | - Recibe hallazgos de AWS WAF y Amazon GuardDuty para visualización y correlación    | Integración |
+|                  | - Puede utilizar AWS Security Hub como origen de eventos en AWS EventBridge         |             |
