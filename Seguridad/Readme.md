@@ -56,3 +56,6 @@ La siguiente plantilla de AWS CloudFormation proporciona una configuración bás
 - **WAFSqlInjectionDetectionSet1**: Define un conjunto de detección de inyección SQL para el WAF.
 - **WAFSqlInjectionExceptionByteSet1**: Define un conjunto de bytes coincidentes para excepciones de inyección SQL en el WAF.
 - **WAFSqlInjectionRule1**: Define una regla del WAF para la detección de inyección SQL.
+
+
+Además, puedes utilizar [reglas predefinidas proporcionadas por AWS y la comunidad](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type.html) para complementar la configuración del WAF.
