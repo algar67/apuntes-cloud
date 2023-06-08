@@ -1,21 +1,24 @@
-## Solución para la alerta de AWS GuardDuty: Acceso no autorizado: IAMUser/MaliciousIPCaller.Custom
+## Solución para la alerta de GuardDuty: UnauthorizedAccess:EC2/MaliciousIPCaller.Custom
 
-1. **Identificar el IAM User:** Revisa el nombre del IAM User mencionado en la alerta (`IAMUser/MaliciousIPCaller.Custom`). Esto te permitirá determinar qué usuario específico ha intentado el acceso no autorizado.
+1. **Identificar el EC2 Instance**: Revisa el identificador (ID) o el nombre del EC2 Instance mencionado en la alerta. Esto te permitirá determinar qué instancia específica ha experimentado el intento de acceso no autorizado.
 
-2. **Evaluar la situación:** Investiga más a fondo el incidente. Puedes examinar los registros y las pistas de auditoría disponibles para obtener más detalles sobre el intento de acceso no autorizado. Esto puede incluir información sobre la dirección IP maliciosa, los recursos o servicios a los que se intentó acceder y cualquier otro patrón o comportamiento sospechoso.
+2. **Evaluar la situación**: Investiga más a fondo el incidente. Examina los registros, las pistas de auditoría y otros detalles disponibles para obtener más información sobre el intento de acceso no autorizado. Esto puede incluir información sobre la dirección IP maliciosa, los puertos de red afectados y cualquier otro patrón o comportamiento sospechoso.
 
-3. **Aislar la cuenta comprometida:** Si has determinado que el intento de acceso no autorizado tuvo éxito y la cuenta ha sido comprometida, debes tomar medidas inmediatas para aislar la cuenta y evitar daños adicionales. Esto puede implicar revocar las credenciales del IAM User afectado, deshabilitar o eliminar recursos comprometidos y tomar otras acciones correctivas necesarias.
+3. **Aislar la instancia comprometida**: Si has determinado que el intento de acceso no autorizado tuvo éxito y la instancia ha sido comprometida, debes tomar medidas inmediatas para aislarla y evitar daños adicionales. Puedes realizar las siguientes acciones:
 
-4. **Investigar la fuente del ataque:** Analiza la dirección IP maliciosa desde la cual se realizó el intento de acceso no autorizado. Puedes utilizar servicios externos o herramientas de seguridad para obtener más información sobre la IP y determinar su reputación o si está asociada con actividades maliciosas conocidas.
+   - Detener la instancia comprometida para evitar que siga siendo accesible.
+   - Desasociar las direcciones IP elásticas, si las hubiera, para evitar el acceso externo directo a la instancia comprometida.
+   - Revisar los volúmenes de almacenamiento asociados a la instancia y, si es necesario, crear instantáneas para respaldar los datos importantes antes de tomar medidas adicionales.
 
-5. **Fortalecer la seguridad:** Una vez que hayas abordado la situación inmediata, es importante tomar medidas para fortalecer la seguridad de tu cuenta de AWS y evitar futuros intentos de acceso no autorizado. Algunas acciones recomendadas incluyen:
+4. **Investigar la fuente del ataque**: Analiza la dirección IP maliciosa desde la cual se realizó el intento de acceso no autorizado. Puedes utilizar servicios externos o herramientas de seguridad para obtener más información sobre la IP y determinar su reputación o si está asociada con actividades maliciosas conocidas.
 
-   - Habilitar la autenticación multifactor (MFA) para los usuarios de IAM y las cuentas raíz.
-   - Revisar y ajustar los permisos y políticas de IAM para garantizar que los usuarios solo tengan los privilegios necesarios.
-   - Aplicar principios de menor privilegio, otorgando solo los permisos necesarios para que los usuarios realicen sus tareas.
-   - Implementar el acceso basado en roles (IAM Roles) en lugar de usar claves de acceso y secretas directamente en instancias EC2 u otros servicios.
-   - Mantener actualizados los sistemas y aplicaciones, aplicando parches de seguridad y siguiendo las mejores prácticas de seguridad recomendadas por AWS.
+5. **Fortalecer la seguridad**: Una vez que hayas abordado la situación inmediata, es importante tomar medidas para fortalecer la seguridad de tus instancias EC2 y evitar futuros intentos de acceso no autorizado. Algunas acciones recomendadas incluyen:
 
-6. **Monitorear y revisar:** Continúa monitoreando las actividades de tu cuenta de AWS utilizando servicios como AWS CloudTrail y GuardDuty. Revisa regularmente los registros y las alertas para detectar posibles amenazas o actividades sospechosas.
+   - Mantener actualizados los sistemas operativos y aplicaciones en tus instancias EC2.
+   - Configurar y aplicar grupos de seguridad adecuados para restringir el tráfico de red entrante y saliente.
+   - Utilizar claves SSH seguras y deshabilitar el acceso de root remoto a las instancias EC2.
+   - Implementar monitoreo y registros adecuados para detectar y responder rápidamente a actividades sospechosas.
+
+6. **Monitorear y revisar**: Continúa monitoreando tus instancias EC2 utilizando servicios como CloudWatch y GuardDuty. Revisa regularmente los registros y las alertas para detectar posibles amenazas o actividades anómalas.
 
 Si la situación se vuelve más compleja o necesitas asistencia adicional, te recomendaría contactar al soporte de AWS para obtener orientación específica sobre tu caso.
