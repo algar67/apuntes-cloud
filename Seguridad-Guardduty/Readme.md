@@ -30,3 +30,29 @@ AWS Security Hub es un servicio de seguridad centralizado que te proporciona una
 
 - Integración con herramientas y servicios de terceros: Security Hub se integra con herramientas y servicios de terceros, lo que te permite agregar datos de seguridad adicionales y obtener una visión más completa de tu postura de seguridad.
 
+## Waf de aplicaciones
+## Configuración y provisión del Firewall de Aplicaciones Web (WAF) de AWS
+
+La siguiente plantilla de AWS CloudFormation proporciona una configuración básica para la provisión de AWS WAF con reglas para una prueba de concepto. Esta plantilla incluye varios parámetros que se pueden personalizar al crear un stack a partir de ella.
+
+### Parámetros configurables:
+
+- **WAFName**: El nombre base que se utilizará para los nombres de recursos y exportaciones relacionados con este stack de WAF.
+- **WAFCloudWatchPrefix**: El prefijo de CloudWatch que se utilizará para cada regla.
+- **WAFManualBlacklistIPRule1Name**: El nombre del recurso para la primera regla de lista negra manual de IP.
+- **WAFManualBlacklistIPSet1Name**: El nombre del recurso para el primer conjunto de lista negra manual de IP.
+- **WAFUserAgentBlacklistRule1Name**: El nombre del recurso para la primera regla de lista negra de agente de usuario.
+- **WAFUserAgentByteSet1Tuple1String**: Una lista separada por comas de cadenas que se incluirán en la regla de lista negra de agente de usuario.
+- **WAFUserAgentBlacklistSet1Name**: El nombre del recurso para el conjunto de lista negra de agente de usuario.
+
+### Recursos utilizados en la configuración del WAF:
+
+- **WAFManualBlacklistIPSet1**: Define un conjunto de direcciones IP para la lista negra del WAF.
+- **WAFUserAgentBlacklistSet1**: Define un conjunto de bytes coincidentes para la lista negra de agentes de usuario del WAF.
+- **WAFManualBlacklistIPRule1**: Define una regla del WAF para la lista negra de direcciones IP.
+- **WAFUserAgentBlacklistRule1**: Define una regla del WAF para la lista negra de agentes de usuario.
+- **WAFWhitelistIPSet1**: Define un conjunto de direcciones IP para la lista blanca del WAF.
+- **WAFWhitelistIPRule1**: Define una regla del WAF para la lista blanca de direcciones IP.
+- **WAFSqlInjectionDetectionSet1**: Define un conjunto de detección de inyección SQL para el WAF.
+- **WAFSqlInjectionExceptionByteSet1**: Define un conjunto de bytes coincidentes para excepciones de inyección SQL en el WAF.
+- **WAFSqlInjectionRule1**: Define una regla del WAF para la detección de inyección SQL.
