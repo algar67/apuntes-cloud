@@ -10,6 +10,21 @@ AWS WAF es un firewall de aplicaciones web que proporciona protección para apli
 
 - Reglas personalizables: AWS WAF te permite crear reglas personalizadas para proteger tus aplicaciones web. También puedes utilizar reglas predefinidas proporcionadas por AWS y la comunidad.
 
+Recursos protegidos por AWS WAF:
+
+- Aplicaciones web y API basadas en HTTP/HTTPS.
+- Sitios web estáticos y dinámicos.
+- Aplicaciones y servicios alojados en Amazon EC2, Elastic Load Balancer (ELB), API Gateway, CloudFront, y AppSync.
+- Aplicaciones y servicios en contenedores alojados en Amazon ECS, EKS y Fargate.
+- Aplicaciones y servicios en servidores sin servidor alojados en AWS Lambda.
+- APIs RESTful y servicios web SOAP.
+- Bases de datos alojadas en Amazon RDS, Aurora, DynamoDB y más.
+- Recursos y servicios de AWS, como CloudFormation, S3, CloudFront y más.
+- Contenido y archivos estáticos alojados en Amazon S3.
+- Capas de seguridad adicionales para aplicaciones y servicios existentes.
+- Diversos tipos de ataques web, como ataques de inyección, cross-site scripting (XSS), SQL injection, ataques de fuerza bruta, ataques de denegación de servicio (DoS) y más.
+
+
 ## Amazon GuardDuty
 
 Amazon GuardDuty es un servicio de detección de amenazas y análisis de seguridad que utiliza el aprendizaje automático y la inteligencia artificial para identificar actividades maliciosas o no autorizadas en tu cuenta de AWS. Algunas características clave de Amazon GuardDuty incluyen:
