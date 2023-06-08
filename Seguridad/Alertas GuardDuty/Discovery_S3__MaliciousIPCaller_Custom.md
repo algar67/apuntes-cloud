@@ -8,6 +8,33 @@
 
 4. **Cambiar las credenciales y habilitar MFA**: Considera cambiar las credenciales de los usuarios y roles asociados a los buckets de S3 afectados. Esto incluye las claves de acceso y las claves secretas. Además, habilita la autenticación multifactor (MFA) para los usuarios y roles autorizados, lo que proporcionará una capa adicional de seguridad.
 
+Para habilitar la autenticación multifactor (MFA) para roles autorizados, puedes seguir estos pasos:
+
+1. Accede a la consola de AWS.
+2. Navega hasta el servicio IAM (Identity and Access Management).
+3. En el panel de navegación izquierdo, selecciona "Roles".
+4. Busca y selecciona el rol al que deseas habilitar la autenticación multifactor.
+5. En la pestaña "Detalles", haz clic en "Editar permisos de confianza".
+6. En la sección "Documentos de confianza", busca la sección "Statement" (Declaración) que contiene el "Effect" (Efecto) "Allow" (Permitir) para el servicio o entidad confiable autorizada.
+7. Dentro de la declaración, agrega el siguiente fragmento de código para habilitar MFA:
+
+```shell
+"Condition": {
+"Bool": {
+"aws:MultiFactorAuthPresent": "true"
+}
+}
+````
+
+8. Haz clic en "Actualizar política" para guardar los cambios.
+
+Al agregar esta condición en la política de confianza del rol, se requerirá que los usuarios autenticados con MFA (autenticación multifactor) proporcionen un segundo factor de autenticación para poder utilizar ese rol. Esto proporciona una capa adicional de seguridad para los roles autorizados en tu cuenta de AWS.
+
+Recuerda que es importante evaluar cuidadosamente los roles a los que deseas habilitar la autenticación multifactor y asegurarte de que los usuarios tengan configurada y activada la autenticación multifactor en sus cuentas.
+
+
+
+
 5. **Auditar y monitorear**: Implementa una política de auditoría y monitoreo continuo para tus buckets de S3. Utiliza las herramientas de registro y monitoreo de AWS, como CloudTrail y CloudWatch, para detectar y registrar cualquier actividad sospechosa o inusual en tiempo real.
 
 6. **Fortalecer la seguridad**: Considera implementar medidas adicionales de seguridad, como:
