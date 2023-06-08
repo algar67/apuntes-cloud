@@ -10,7 +10,7 @@ AWS WAF es un firewall de aplicaciones web que proporciona protección para apli
 
 - Reglas personalizables: AWS WAF te permite crear reglas personalizadas para proteger tus aplicaciones web. También puedes utilizar reglas predefinidas proporcionadas por AWS y la comunidad.
 
-Recursos protegidos por AWS WAF:
+### Recursos protegidos por AWS WAF:
 
 - Aplicaciones web y API basadas en HTTP/HTTPS.
 - Sitios web estáticos y dinámicos.
