@@ -1,4 +1,5 @@
-## Solución para la alerta de GuardDuty: UnauthorizedAccess:EC2/MaliciousIPCaller.Custom
+## Solución para la alerta de GuardDuty: 
+## UnauthorizedAccess:EC2/MaliciousIPCaller.Custom
 
 1. **Identificar el EC2 Instance**: Revisa el identificador (ID) o el nombre del EC2 Instance mencionado en la alerta. Esto te permitirá determinar qué instancia específica ha experimentado el intento de acceso no autorizado.
 
